@@ -12,33 +12,86 @@
   >
 
   <style>
+    :root {
+      --main-blue: #2563eb;
+      --dark-blue: #1e3a8a;
+      --light-blue: #dbeafe;
+      --bg-gray: #f3f4f6;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg-gray);
     }
+
+    .navbar {
+      background-color: var(--dark-blue) !important;
+    }
+
     .navbar-brand {
       font-weight: 600;
     }
+
+    .nav-link.active {
+      font-weight: 600;
+      color: var(--light-blue) !important;
+    }
+
+    .nav-link:hover {
+      color: var(--main-blue) !important;
+    }
+
     .hero {
       padding: 6rem 1rem 4rem;
-      background: #111827;
-      color: #f9fafb;
+      background: linear-gradient(to bottom right, var(--dark-blue), var(--main-blue));
+      color: white;
       text-align: center;
     }
+
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.7rem;
       font-weight: 700;
     }
+
     .hero p {
       max-width: 700px;
       margin: 1rem auto 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
+
+    .project-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: white;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
     .project-card img {
       object-fit: cover;
       height: 220px;
     }
+
+    .btn-blue {
+      background-color: var(--main-blue);
+      color: white;
+      border: none;
+    }
+
+    .btn-blue:hover {
+      background-color: #1e50c5;
+      color: white;
+    }
+
     footer {
-      background: #0f172a;
-      color: #9ca3af;
+      background: var(--dark-blue);
+      color: #e2e8f0;
       padding: 1.5rem 0;
       margin-top: 3rem;
     }
@@ -46,8 +99,7 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">Alexis Hernandez</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -75,71 +127,60 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <h1>Digital Media Portfolio</h1>
     <p>
-      Hi, I’m <strong>Alexis Hernandez</strong> — a digital media student exploring glitch,
-      memes & mashups, 3D, and web-based art. This site collects work from
-      <em>ART 74: Intro to Digital Media</em>.
+      Hi, I’m <strong>Alexis Hernandez</strong>. This portfolio showcases my
+      digital media work from <em>ART 74: Intro to Digital Media</em>—
+      including glitch art, memes & mashups, 3D design, and interactive HTML projects.
     </p>
   </div>
 </section>
 
-<!-- FEATURED PROJECTS -->
-<section class="py-5 bg-light">
+<section class="py-5">
   <div class="container">
-    <h2 class="mb-4 text-center">Featured Projects</h2>
+    <h2 class="mb-4 text-center fw-bold" style="color: var(--dark-blue);">Featured Projects</h2>
     <div class="row g-4">
 
-      <!-- Glitch -->
       <div class="col-md-4">
-        <div class="card h-100 project-card shadow-sm">
+        <div class="card project-card shadow-sm h-100">
           <img src="glitch1.png" class="card-img-top" alt="Glitch artwork">
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Glitch Art</h5>
+            <h5 class="card-title fw-bold">Glitch Art</h5>
             <p class="card-text">
-              A glitched image created using Photoshop and TextEdit that turns
-              digital errors into a visual style.
+              A digital image intentionally corrupted using Photoshop and TextEdit
+              to turn “errors” into a visual style.
             </p>
-            <a href="projects.html#glitch" class="btn btn-outline-dark btn-sm mt-auto">
-              View project
-            </a>
+            <a href="projects.html#glitch" class="btn btn-blue mt-auto">View project</a>
           </div>
         </div>
       </div>
 
-      <!-- Meme -->
       <div class="col-md-4">
-        <div class="card h-100 project-card shadow-sm">
+        <div class="card project-card shadow-sm h-100">
           <img src="meme1.png" class="card-img-top" alt="Meme mashup artwork">
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Meme Mashup</h5>
+            <h5 class="card-title fw-bold">Meme Mashup</h5>
             <p class="card-text">
-              A remix of multiple internet memes that comments on online
-              humor, virality, and remix culture.
+              A remix of popular internet memes combined into one piece that
+              comments on online humor and remix culture.
             </p>
-            <a href="projects.html#meme" class="btn btn-outline-dark btn-sm mt-auto">
-              View project
-            </a>
+            <a href="projects.html#meme" class="btn btn-blue mt-auto">View project</a>
           </div>
         </div>
       </div>
 
-      <!-- 3D -->
       <div class="col-md-4">
-        <div class="card h-100 project-card shadow-sm">
+        <div class="card project-card shadow-sm h-100">
           <img src="3D.png" class="card-img-top" alt="3D render artwork">
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title">3D Object & Animation</h5>
+            <h5 class="card-title fw-bold">3D Object & Animation</h5>
             <p class="card-text">
-              A 3D sculpture modeled in Blender, experimenting with light,
-              materials, and camera movement.
+              A stylized 3D model created in Blender, exploring light, materials,
+              and camera movement.
             </p>
-            <a href="projects.html#3d" class="btn btn-outline-dark btn-sm mt-auto">
-              View project
-            </a>
+            <a href="projects.html#3d" class="btn btn-blue mt-auto">View project</a>
           </div>
         </div>
       </div>
@@ -147,7 +188,7 @@
     </div>
 
     <div class="text-center mt-4">
-      <a href="projects.html" class="btn btn-dark">
+      <a href="projects.html" class="btn btn-blue btn-lg px-4">
         See all projects
       </a>
     </div>
@@ -160,8 +201,6 @@
   </div>
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
